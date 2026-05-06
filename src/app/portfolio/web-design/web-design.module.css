@@ -1,0 +1,547 @@
+.container {
+  min-height: 100vh;
+  background-color: #FAF9F7;
+  color: #111;
+  font-family: var(--font-inter), sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+/* Landing Page Blueprint Grid */
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  background-image: 
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -1;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+}
+
+.hero {
+  padding: 40px 2rem 60px;
+  text-align: left;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.heroContent {
+  max-width: 800px;
+}
+
+.badge {
+  color: #F4522A;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: rgba(244, 82, 42, 0.08);
+  padding: 6px 16px;
+  border: 1px solid rgba(244, 82, 42, 0.15);
+  display: inline-block;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.title {
+  font-family: var(--font-playfair), serif;
+  font-size: 5rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  color: #000;
+}
+
+.accent {
+  color: #f4522a;
+  font-style: italic;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 650px;
+  margin: 0 0 32px;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.heroStats {
+  display: flex;
+  justify-content: flex-start;
+  gap: 48px;
+  margin-bottom: 32px;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.statValue {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.statLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+}
+
+.divider {
+  width: 100px;
+  height: 4px;
+  background: #f4522a;
+  margin: 0;
+  border-radius: 2px;
+}
+
+.heroDivider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, rgba(244, 82, 42, 0.3), transparent);
+  margin-top: 40px;
+}
+
+/* Roadmap Section */
+.roadmapSection {
+  padding: 100px 2rem;
+  background: white;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(244, 82, 42, 0.1);
+  border-bottom: 1px solid rgba(244, 82, 42, 0.1);
+}
+
+.roadmapSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(rgba(244, 82, 42, 0.04) 1.5px, transparent 1.5px);
+  background-size: 32px 32px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.blueprintAxis {
+  position: relative;
+  max-width: 1000px;
+  margin: 80px auto 0;
+  padding-top: 24px;
+}
+
+.axisLine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(244, 82, 42, 0.4) 10%, rgba(244, 82, 42, 0.4) 90%, transparent);
+}
+
+.animatedCar {
+  position: absolute;
+  z-index: 10;
+  filter: drop-shadow(0 4px 6px rgba(244, 82, 42, 0.3));
+}
+
+.desktopCar {
+  top: -18px;
+  transform: translateX(-50%);
+}
+
+.mobileCar {
+  display: none;
+}
+
+.axisMarks {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+}
+
+.axisMark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 120px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+.axisMark:hover {
+  transform: translateY(-5px);
+}
+
+.markDot {
+  position: absolute;
+  top: -28px; /* Centers it on the axisLine considering top padding */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: #f4522a;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px white, 0 0 0 5px rgba(244, 82, 42, 0.2);
+  transition: all 0.3s ease;
+}
+
+.axisMark:hover .markDot {
+  transform: translateX(-50%) scale(1.5);
+  box-shadow: 0 0 0 4px white, 0 0 0 6px rgba(244, 82, 42, 0.4);
+}
+
+.markNumber {
+  font-family: var(--font-playfair), serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.08);
+  line-height: 1;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.axisMark:hover .markNumber {
+  color: rgba(244, 82, 42, 0.4);
+}
+
+.markLabel {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #111;
+}
+
+@media (max-width: 768px) {
+  .blueprintAxis {
+    margin: 40px auto 0;
+    padding-left: 24px;
+    padding-top: 0;
+  }
+  
+  .axisLine {
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, transparent, rgba(244, 82, 42, 0.4) 10%, rgba(244, 82, 42, 0.4) 90%, transparent);
+  }
+
+  .desktopCar {
+    display: none;
+  }
+
+  .mobileCar {
+    display: block;
+    left: -18px;
+    transform: translateY(-50%) rotate(90deg);
+  }
+  
+  .axisMarks {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .axisMark {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .markDot {
+    top: 50%;
+    left: -24px;
+    transform: translateY(-50%);
+  }
+  
+  .axisMark:hover .markDot {
+    transform: translateY(-50%) scale(1.5);
+  }
+  
+  .markNumber {
+    margin-bottom: 0;
+    margin-right: 16px;
+    font-size: 1.8rem;
+  }
+}
+
+/* Services Section */
+.servicesSection {
+  padding: 100px 2rem;
+  background: white;
+  border-top: 1px solid rgba(244, 82, 42, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.servicesSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(244, 82, 42, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 82, 42, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.serviceCard {
+  background: white;
+  border: 1px solid var(--border-color);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.serviceCard:hover {
+  border-color: #f4522a;
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+}
+
+.serviceCategory {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #F4522A;
+  background: rgba(244, 82, 42, 0.05);
+  padding: 4px 12px;
+  align-self: flex-start;
+  border: 1px solid rgba(244, 82, 42, 0.1);
+}
+
+.serviceTitle {
+  font-family: var(--font-playfair), serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #111;
+  margin: 0;
+}
+
+.serviceDesc {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0 0 10px;
+}
+
+.startProjectBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #111;
+  color: white;
+  padding: 14px 28px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  align-self: flex-start;
+  transition: all 0.3s ease;
+  border: 1px solid #111;
+}
+
+.startProjectBtn:hover {
+  background: #f4522a;
+  border-color: #f4522a;
+  gap: 16px;
+}
+
+.startProjectBtn svg {
+  transition: transform 0.3s ease;
+}
+
+/* Stack Section */
+.stackSection {
+  padding: 100px 2rem;
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  border-top: 1px solid rgba(244, 82, 42, 0.15);
+}
+
+.stackSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.stackCategories {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.categoryGroup {
+  position: relative;
+  z-index: 1;
+}
+
+.categoryName {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #F4522A;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.categoryName::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-color);
+  opacity: 0.3;
+}
+
+.stackGrid {
+  display: flex;
+  justify-content: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.stackItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 90px;
+}
+
+.stackIcon {
+  width: 64px;
+  height: 64px;
+  background: white;
+  padding: 14px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stackItem:hover .stackIcon {
+  transform: translateY(-8px);
+  border-color: #f4522a;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.stackItem span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.ctaSection {
+  padding: 100px 2rem;
+  text-align: left;
+  background: white;
+  border-top: 1px solid rgba(244, 82, 42, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.2;
+}
+
+.ctaContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.ctaSection .title {
+  font-size: 3.5rem;
+  margin-bottom: 16px;
+}
+
+.ctaSection .description {
+  margin: 0 0 32px;
+  max-width: 600px;
+}
+
+.ctaSection .divider {
+  margin: 0;
+}
+
+.ctaButton {
+  display: none;
+}

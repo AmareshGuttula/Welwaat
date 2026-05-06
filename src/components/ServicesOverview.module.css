@@ -1,0 +1,153 @@
+.overviewSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.overviewSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(244, 82, 42, 0.2), transparent);
+}
+
+.overviewHeader {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.overviewTitle {
+  font-family: var(--font-playfair), serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #111;
+  letter-spacing: -1.5px;
+  position: relative;
+  display: inline-block;
+}
+
+.overviewTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #f4522a;
+}
+
+.accent {
+  color: #f4522a;
+  font-style: italic;
+}
+
+.overviewGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.overviewCard {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  padding: 24px;
+  position: relative;
+  overflow: visible;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.overviewCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.overviewIcon {
+  color: #f4522a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+}
+
+.overviewCardTitle {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.overviewList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.overviewLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  text-decoration: none;
+  color: #666;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.overviewLink span {
+  line-height: 1.3;
+}
+
+.overviewLink:hover {
+  color: #f4522a;
+  padding-left: 8px;
+}
+
+.overviewArrow {
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  color: #f4522a;
+}
+
+.overviewLink:hover .overviewArrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 1024px) {
+  .overviewGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .overviewSection {
+    padding: 60px 1.5rem;
+  }
+  .overviewTitle {
+    font-size: 2.2rem;
+  }
+  .overviewGrid {
+    grid-template-columns: 1fr;
+  }
+}

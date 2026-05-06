@@ -1,0 +1,338 @@
+.container {
+  min-height: 100vh;
+  background-color: #FAF9F7;
+  color: #111;
+  font-family: var(--font-inter), sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+/* Landing Page Blueprint Grid */
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(244, 82, 42, 0.1) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+  z-index: -1;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.hero {
+  padding: 180px 2rem 100px;
+  text-align: center;
+  position: relative;
+}
+
+.title {
+  font-family: var(--font-playfair), serif;
+  font-size: 4.5rem;
+  font-weight: 500;
+  margin-bottom: 32px;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  color: #000;
+}
+
+.accent {
+  color: #f4522a;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 750px;
+  margin: 0 auto 48px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.principlesSection {
+  padding: 100px 2rem;
+  background-color: #FAF9F7;
+  border-top: 1px solid rgba(244, 82, 42, 0.1);
+  position: relative;
+}
+
+.principlesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+  max-width: 1100px;
+  margin: 64px auto 0;
+}
+
+.principleCard {
+  background: white;
+  border: 1px solid rgba(244, 82, 42, 0.15);
+  padding: 48px 24px;
+  border-radius: 4px;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 340px;
+}
+
+.principleCard::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background-image: 
+    linear-gradient(#f4522a, #f4522a), 
+    linear-gradient(#f4522a, #f4522a), 
+    linear-gradient(#f4522a, #f4522a), 
+    linear-gradient(#f4522a, #f4522a);
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+  background-position: top left, top right, bottom left, bottom right;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.principleCard:hover {
+  border-color: #f4522a;
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(244, 82, 42, 0.05);
+}
+
+.principleCard:hover::before {
+  opacity: 1;
+}
+
+.principleIcon {
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f4522a;
+  background: #fff5f3;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  font-size: 2.5rem;
+}
+
+.principleCard h3 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  font-weight: 700;
+  color: #111;
+}
+
+.principleCard p {
+  color: #777;
+  line-height: 1.6;
+}
+
+/* Lifecycle Section */
+.lifecycleSection {
+  padding: 120px 2rem;
+  background: white;
+  border-top: 1px solid rgba(244, 82, 42, 0.1);
+  border-bottom: 1px solid rgba(244, 82, 42, 0.1);
+  position: relative;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.sectionHeader h2 {
+  font-family: var(--font-playfair), serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #111;
+  letter-spacing: -1.5px;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 24px;
+}
+
+.sectionHeader h2::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #f4522a;
+  border-radius: 4px;
+}
+
+.sectionHeader .description {
+  margin-top: 12px;
+}
+
+.lifecycleGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.stepCard {
+  background: white;
+  border: 1px solid rgba(244, 82, 42, 0.15);
+  padding: 48px 24px;
+  border-radius: 4px;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 340px;
+}
+
+.stepCard::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background-image: 
+    linear-gradient(#f4522a, #f4522a), 
+    linear-gradient(#f4522a, #f4522a), 
+    linear-gradient(#f4522a, #f4522a), 
+    linear-gradient(#f4522a, #f4522a);
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+  background-position: top left, top right, bottom left, bottom right;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.stepCard:hover {
+  border-color: #f4522a;
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(244, 82, 42, 0.05);
+}
+
+.stepCard:hover::before {
+  opacity: 1;
+}
+
+.stepIcon {
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f4522a;
+  background: #fff5f3;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.stepCard:hover .stepIcon {
+  transform: scale(1.1);
+  background: #f4522a;
+  color: #fff;
+}
+
+.stepCard h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #111;
+}
+
+.stepCard p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Stack Section */
+.stackSection {
+  padding: 100px 2rem;
+  text-align: center;
+}
+
+.stackGrid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 48px;
+}
+
+.stackItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 120px;
+}
+
+.stackIcon {
+  width: 72px;
+  height: 72px;
+  background: white;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(244, 82, 42, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stackItem:hover .stackIcon {
+  transform: translateY(-8px);
+  border-color: #f4522a;
+  box-shadow: 0 15px 30px rgba(244, 82, 42, 0.1);
+}
+
+.stackItem span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.ctaSection {
+  padding: 120px 2rem;
+  text-align: center;
+  background: white;
+  border-top: 1px solid rgba(244, 82, 42, 0.15);
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 16px 40px;
+  background: #f4522a;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.ctaButton:hover {
+  background: #111;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+}

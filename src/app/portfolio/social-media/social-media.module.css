@@ -1,0 +1,709 @@
+.container {
+  min-height: 100vh;
+  background-color: #FAF9F7;
+  color: #111;
+  font-family: var(--font-inter), sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+/* Landing Page Blueprint Grid */
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(244, 82, 42, 0.1) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+  z-index: -1;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.hero {
+  padding: 180px 2rem 100px;
+  text-align: center;
+  position: relative;
+}
+
+.title {
+  font-family: var(--font-playfair), serif;
+  font-size: 4.5rem;
+  font-weight: 500;
+  margin-bottom: 32px;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  color: #000;
+}
+
+.accent {
+  color: #f4522a;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 750px;
+  margin: 0 auto 48px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Platform Pills */
+.platforms {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.platformPill {
+  padding: 10px 22px;
+  background: white;
+  border: 1px solid rgba(244, 82, 42, 0.2);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: default;
+  color: #444;
+  position: relative;
+}
+
+.platformPill:hover {
+  border-color: #f4522a;
+  color: #f4522a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(244, 82, 42, 0.05);
+}
+
+/* Stats Section */
+.statsSection {
+  padding: 80px 2rem;
+  background: white;
+  border-top: 1px solid rgba(244, 82, 42, 0.15);
+  border-bottom: 1px solid rgba(244, 82, 42, 0.15);
+  position: relative;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.statCard {
+  text-align: center;
+  padding: 32px 24px;
+  position: relative;
+  background: white;
+  border: 1px solid rgba(244, 82, 42, 0.1);
+  border-radius: 4px;
+}
+
+.statCard::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background-image: 
+    linear-gradient(#f4522a, #f4522a), 
+    linear-gradient(#f4522a, #f4522a), 
+    linear-gradient(#f4522a, #f4522a), 
+    linear-gradient(#f4522a, #f4522a);
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+  background-position: top left, top right, bottom left, bottom right;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.statValue {
+  display: block;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #f4522a;
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+/* Feed Section with Landing Page Cards */
+.feedSection {
+  padding: 100px 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.sectionHeader h2 {
+  font-family: var(--font-playfair), serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #111;
+  letter-spacing: -1.5px;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 24px;
+}
+
+.sectionHeader h2::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #f4522a;
+  border-radius: 4px;
+}
+
+.sectionHeader .description {
+  margin-top: 12px;
+}
+
+.feedGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.postCard {
+  background-color: #ffffff;
+  background-image: radial-gradient(rgba(244, 82, 42, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  border-radius: 4px;
+  overflow: visible;
+  border: 1px solid rgba(244, 82, 42, 0.2);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+}
+
+/* Orange Corner Handles */
+.postCard::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background-image: 
+    linear-gradient(#f4522a, #f4522a), 
+    linear-gradient(#f4522a, #f4522a), 
+    linear-gradient(#f4522a, #f4522a), 
+    linear-gradient(#f4522a, #f4522a);
+  background-size: 8px 8px;
+  background-repeat: no-repeat;
+  background-position: top left, top right, bottom left, bottom right;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.postCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+  border-color: #f4522a;
+}
+
+.postImage {
+  aspect-ratio: 16 / 11;
+  background-size: cover;
+  background-position: center;
+  background-color: #f0f0f0;
+  position: relative;
+  border-radius: 4px 4px 0 0;
+  overflow: hidden;
+}
+
+.postOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(244, 82, 42, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: #fff;
+}
+
+.postOverlay .statValue {
+  color: #fff;
+}
+
+.postCard:hover .postOverlay {
+  opacity: 1;
+}
+
+.postInfo {
+  padding: 24px;
+}
+
+.postType {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #f4522a;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.postTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #111;
+  line-height: 1.4;
+}
+
+/* Strategy Section */
+.strategySection {
+  padding: 100px 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.strategyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .strategyGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.strategyContent h3 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  font-family: var(--font-playfair), serif;
+  color: #111;
+  letter-spacing: -1px;
+}
+
+.strategyList {
+  list-style: none;
+  padding: 0;
+}
+
+.strategyItem {
+  margin-bottom: 32px;
+  display: flex;
+  gap: 24px;
+}
+
+.strategyNumber {
+  color: #f4522a;
+  font-weight: 800;
+  font-size: 1.1rem;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(244, 82, 42, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.strategyText h4 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #111;
+  font-weight: 700;
+}
+
+.strategyText p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.strategyVisual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1500px;
+}
+
+.phoneMockup {
+  width: 290px;
+  height: 600px;
+  background: white;
+  border-radius: 48px;
+  border: 12px solid #111;
+  position: relative;
+  box-shadow: 0 50px 100px rgba(0,0,0,0.12);
+  overflow: hidden;
+  transform: rotateY(-15deg) rotateX(8deg);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.phoneMockup::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.phoneMockup:hover {
+  transform: rotateY(0deg) rotateX(0deg) scale(1.02);
+}
+
+.phoneHeader {
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+}
+
+.phoneDynamicIsland {
+  width: 90px;
+  height: 24px;
+  background: #000;
+  border-radius: 12px;
+}
+
+.phoneScreen {
+  height: calc(100% - 36px);
+  background: white;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.instaHeaderTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.instaProfile {
+  padding: 16px;
+}
+
+.instaProfileTop {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 12px;
+}
+
+.instaAvatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  padding: 2px;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.avatarInner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #f4522a;
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+.instaStats {
+  display: flex;
+  gap: 16px;
+  flex: 1;
+  justify-content: space-around;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statItem strong {
+  font-size: 0.9rem;
+  color: #000;
+}
+
+.statItem span {
+  font-size: 0.7rem;
+  color: #666;
+}
+
+.instaBio {
+  margin-bottom: 16px;
+}
+
+.bioName {
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 2px;
+  color: #000;
+}
+
+.bioText {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: #111;
+  margin-bottom: 4px;
+}
+
+.bioLink {
+  font-size: 0.8rem;
+  color: #00376b;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.instaButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.instaFollowBtn {
+  flex: 1;
+  background: #0095f6;
+  color: white;
+  border: none;
+  padding: 6px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.instaActionBtn {
+  flex: 1;
+  background: #efefef;
+  color: #000;
+  border: none;
+  padding: 6px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.instaHighlights {
+  display: flex;
+  gap: 16px;
+  padding: 0 16px 16px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.instaHighlights::-webkit-scrollbar {
+  display: none;
+}
+
+.highlightItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.highlightCircle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 0 1px #eee;
+}
+
+.highlightItem span {
+  font-size: 0.7rem;
+  color: #000;
+  font-weight: 500;
+}
+
+.instaTabs {
+  display: flex;
+  border-top: 1px solid #f0f0f0;
+  margin-top: 8px;
+}
+
+.instaTab {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+  color: #999;
+}
+
+.instaTab.active {
+  color: #000;
+  border-top: 1.5px solid #000;
+}
+
+.instaFeed {
+  background: #fff;
+}
+
+.instaGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+}
+
+.instaPostSmall {
+  aspect-ratio: 1;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Pillars Section */
+.pillarsSection {
+  padding: 100px 2rem;
+  background-color: #FAF9F7;
+  border-top: 1px solid rgba(244, 82, 42, 0.1);
+  position: relative;
+}
+
+.pillarsSection .sectionHeader {
+  border: none;
+  padding: 0;
+}
+
+.pillarsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+  max-width: 1100px;
+  margin: 64px auto 0;
+}
+
+.pillarCard {
+  background: white;
+  border: 1px solid rgba(244, 82, 42, 0.15);
+  padding: 48px 24px;
+  border-radius: 4px;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 380px;
+}
+
+.pillarCard::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background-image: 
+    linear-gradient(#f4522a, #f4522a), 
+    linear-gradient(#f4522a, #f4522a), 
+    linear-gradient(#f4522a, #f4522a), 
+    linear-gradient(#f4522a, #f4522a);
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+  background-position: top left, top right, bottom left, bottom right;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.pillarCard:hover {
+  border-color: #f4522a;
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(244, 82, 42, 0.05);
+}
+
+.pillarCard:hover::before {
+  opacity: 1;
+}
+
+.pillarIcon {
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f4522a;
+  background: #fff5f3;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.pillarCard:hover .pillarIcon {
+  transform: scale(1.1);
+  background: #f4522a;
+  color: #fff;
+}
+
+.pillarCard h3 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  font-weight: 700;
+  color: #111;
+}
+
+.pillarCard p {
+  color: #777;
+  line-height: 1.6;
+}
+
+.ctaSection {
+  padding: 120px 2rem;
+  text-align: center;
+  background: white;
+  border-top: 1px solid rgba(244, 82, 42, 0.15);
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 16px 40px;
+  background: #f4522a;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.ctaButton:hover {
+  background: #111;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+}

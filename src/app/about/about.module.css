@@ -1,0 +1,434 @@
+.aboutPage {
+  background-color: #FAF9F7;
+  color: #111;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* Website Dot Pattern */
+.aboutPage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(244, 82, 42, 0.15) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+  z-index: 0;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Hero Section ─── */
+.hero {
+  text-align: center;
+  padding: 180px 24px 100px;
+}
+
+.badge {
+  color: #f4522a;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: rgba(244, 82, 42, 0.08);
+  padding: 6px 16px;
+  border-radius: 4px;
+  border: 1px solid rgba(244, 82, 42, 0.15);
+  display: inline-block;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.title {
+  font-family: var(--font-playfair), serif;
+  font-size: 4.5rem;
+  line-height: 1.05;
+  margin-bottom: 32px;
+  letter-spacing: -1.5px;
+  color: #000;
+  font-weight: 500;
+}
+
+.accent {
+  color: #f4522a;
+  font-style: italic;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 0;
+  font-weight: 400;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ─── Stats Section ─── */
+.statsSection {
+  padding: 60px 0;
+  border-top: 1px solid rgba(244, 82, 42, 0.1);
+  border-bottom: 1px solid rgba(244, 82, 42, 0.1);
+  background: white;
+  margin: 40px 0 80px;
+  position: relative;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.statItem {
+  text-align: center;
+}
+
+.statNumber {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: #111;
+  letter-spacing: -1.5px;
+  line-height: 1;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.statLabel {
+  color: #F4522A;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ─── Founder Section ─── */
+.founderSection {
+  padding: 80px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.founderImageWrapper {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid rgba(244, 82, 42, 0.25);
+  padding: 0;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Website style corner handles */
+.founderImageWrapper::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background-image: 
+    linear-gradient(#F4522A, #F4522A), 
+    linear-gradient(#F4522A, #F4522A), 
+    linear-gradient(#F4522A, #F4522A), 
+    linear-gradient(#F4522A, #F4522A);
+  background-size: 8px 8px;
+  background-repeat: no-repeat;
+  background-position: top left, top right, bottom left, bottom right;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.founderPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: radial-gradient(rgba(244, 82, 42, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.founderText h2 {
+  font-family: var(--font-playfair), serif;
+  font-size: 3rem;
+  color: #111;
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+}
+
+.founderRole {
+  color: #F4522A;
+  font-weight: 600;
+  margin-bottom: 24px !important;
+  font-size: 0.9rem;
+  display: block;
+}
+
+.founderText p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.founderQuote {
+  margin-top: 32px;
+  padding: 24px;
+  background: white;
+  border-radius: 4px;
+  border: 1px solid rgba(244, 82, 42, 0.15);
+  font-family: var(--font-playfair), serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.4;
+  position: relative;
+}
+
+.founderQuote::after {
+  content: "→";
+  position: absolute;
+  bottom: 20px;
+  right: 24px;
+  color: #F4522A;
+  font-style: normal;
+  font-family: var(--font-inter);
+}
+
+/* ─── Philosophy Section ─── */
+.philosophy {
+  padding: 80px 0;
+}
+
+.card {
+  background: white;
+  border: 1px solid rgba(244, 82, 42, 0.2);
+  padding: 56px;
+  position: relative;
+  background-image: radial-gradient(rgba(244, 82, 42, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background-image: 
+    linear-gradient(#F4522A, #F4522A), 
+    linear-gradient(#F4522A, #F4522A), 
+    linear-gradient(#F4522A, #F4522A), 
+    linear-gradient(#F4522A, #F4522A);
+  background-size: 8px 8px;
+  background-repeat: no-repeat;
+  background-position: top left, top right, bottom left, bottom right;
+  pointer-events: none;
+}
+
+.card h3 {
+  font-family: var(--font-playfair), serif;
+  font-size: 2.8rem;
+  margin-bottom: 16px;
+  color: #111;
+}
+
+.card > p {
+  font-size: 1.15rem;
+  color: #666;
+  max-width: 800px;
+  margin-bottom: 48px;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.gridItem h4 {
+  font-family: var(--font-inter), sans-serif;
+  color: #F4522A;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.gridItem p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* ─── Roadmap Section ─── */
+.roadmapSection {
+  padding: 80px 0;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.sectionHeader h2 {
+  font-family: var(--font-playfair), serif;
+  font-size: 3rem;
+  color: #111;
+}
+
+.roadmapContainer {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 40px;
+}
+
+.roadmapContainer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, #F4522A, rgba(244, 82, 42, 0.05));
+}
+
+.roadmapItem {
+  position: relative;
+  margin-bottom: 48px;
+}
+
+.roadmapItem::before {
+  content: "";
+  position: absolute;
+  left: -44.5px;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  background: #F4522A;
+  border-radius: 50%;
+}
+
+.year {
+  color: #F4522A;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.itemContent h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.itemContent p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* ─── Values Section ─── */
+.valuesSection {
+  padding: 80px 0 120px;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.valueCard {
+  background: white;
+  border: 1px solid rgba(244, 82, 42, 0.2);
+  padding: 32px;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+}
+
+.valueCard:hover {
+  transform: translateY(-8px);
+  border-color: #F4522A;
+  box-shadow: 0 10px 25px rgba(244, 82, 42, 0.05);
+}
+
+.valueIcon {
+  color: #F4522A;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 20px;
+}
+
+.valueCard h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #111;
+}
+
+.valueCard p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .valuesGrid, .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+  
+  .founderSection {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .card {
+    padding: 32px;
+  }
+  
+  .card h3 {
+    font-size: 2.2rem;
+  }
+
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+}

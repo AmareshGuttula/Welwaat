@@ -1,0 +1,66 @@
+.mascotContainer {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  animation: floatIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
+             bobbing 3s ease-in-out infinite 0.6s;
+}
+
+.speechBubble {
+  background: white;
+  padding: 12px 16px;
+  border-radius: 16px 16px 4px 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 12px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: popIn 0.4s ease forwards 1s;
+  border: 1px solid rgba(244, 82, 42, 0.1);
+}
+
+.mascotWrapper {
+  width: 150px;
+  height: 180px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+.mascotWrapper:hover {
+  transform: scale(1.1) translateY(-10px);
+}
+
+.mascotImage {
+  width: 500%; /* Scale up more to focus on one character */
+  height: auto;
+  object-fit: contain;
+  object-position: 18% 18%; /* Target the top-left-ish character */
+  mix-blend-mode: multiply;
+  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+}
+
+@keyframes bobbing {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes floatIn {
+  0% { transform: translateY(100px) scale(0.5); opacity: 0; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+@keyframes popIn {
+  0% { transform: translateY(10px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
