@@ -52,6 +52,56 @@ export default function WebDesignPortfolio() {
 
             <div className={styles.heroDivider}></div>
           </div>
+
+          <div className={styles.heroVisual}>
+            <div className={styles.visualContainer}>
+              {/* Architectural Web Illustration */}
+              <svg viewBox="0 0 500 400" className={styles.blueprintSvg}>
+                <defs>
+                  <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#f4522a" stopOpacity="0.1" />
+                    <stop offset="100%" stopColor="#f4522a" stopOpacity="0" />
+                  </linearGradient>
+                </defs>
+                
+                {/* Background Grid */}
+                <path d="M0,50 L500,50 M0,100 L500,100 M0,150 L500,150 M0,200 L500,200 M0,250 L500,250 M0,300 L500,300 M0,350 L500,350" stroke="rgba(244, 82, 42, 0.05)" strokeWidth="1" />
+                <path d="M50,0 L50,400 M100,0 L100,400 M150,0 L150,400 M200,0 L200,400 M250,0 L250,400 M300,0 L300,400 M350,0 L350,400 M400,0 L400,400 M450,0 L450,400" stroke="rgba(244, 82, 42, 0.05)" strokeWidth="1" />
+
+                {/* Main Browser Window Frame */}
+                <rect x="50" y="80" width="380" height="260" rx="4" fill="white" stroke="#f4522a" strokeWidth="1.5" strokeOpacity="0.2" />
+                <rect x="50" y="80" width="380" height="30" rx="4" fill="#faf9f7" stroke="#f4522a" strokeWidth="1.5" strokeOpacity="0.2" />
+                <circle cx="70" cy="95" r="3" fill="#f4522a" opacity="0.3" />
+                <circle cx="85" cy="95" r="3" fill="#f4522a" opacity="0.3" />
+                <circle cx="100" cy="95" r="3" fill="#f4522a" opacity="0.3" />
+
+                {/* Layout Components */}
+                <rect x="70" y="130" width="100" height="100" rx="2" fill="url(#grad1)" stroke="#f4522a" strokeWidth="1" strokeDasharray="4 2" strokeOpacity="0.5" />
+                <rect x="190" y="130" width="220" height="20" rx="2" fill="rgba(244, 82, 42, 0.05)" />
+                <rect x="190" y="160" width="220" height="12" rx="2" fill="rgba(0, 0, 0, 0.03)" />
+                <rect x="190" y="180" width="180" height="12" rx="2" fill="rgba(0, 0, 0, 0.03)" />
+                
+                <rect x="70" y="250" width="340" height="60" rx="2" fill="rgba(244, 82, 42, 0.02)" stroke="#f4522a" strokeWidth="1" strokeOpacity="0.1" />
+                
+                {/* Cursor & Interactive Points */}
+                <motion.circle 
+                  cx="120" cy="180" r="4" fill="#f4522a" 
+                  animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                />
+                <motion.path 
+                  d="M250,150 L300,200" stroke="#f4522a" strokeWidth="1.5" 
+                  animate={{ pathLength: [0, 1, 0] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                />
+              </svg>
+              
+              {/* Floating Tech Labels */}
+              <div className={`${styles.techLabel} ${styles.labelNext}`}>Next.js</div>
+              <div className={`${styles.techLabel} ${styles.labelReact}`}>React</div>
+              <div className={`${styles.techLabel} ${styles.labelTS}`}>TypeScript</div>
+            </div>
+          </div>
         </section>
 
         {/* Gallery Section */}
@@ -109,7 +159,7 @@ export default function WebDesignPortfolio() {
         {/* Tech Stack */}
         <section className={styles.stackSection}>
           <div className={styles.sectionHeader}>
-            <h2>Technology <span className={styles.accent}>Stack</span></h2>
+            <h2 className={styles.stackTitle}>Technology <span className={styles.accent}>Stack</span></h2>
             <div className={styles.divider}></div>
           </div>
           <div className={styles.stackCategories}>

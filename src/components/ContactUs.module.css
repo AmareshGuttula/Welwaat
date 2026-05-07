@@ -191,3 +191,33 @@ address.infoValue {
     gap: 24px;
   }
 }
+
+@media (max-width: 480px) {
+  .contactSection {
+    padding: 60px 16px;
+  }
+  .header h2 {
+    font-size: 2.2rem;
+  }
+  .infoTitle {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .header h2 {
+    font-size: 1.8rem;
+  }
+  .infoTitle {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .header h2 {
+    font-size: 1.6rem;
+  }
+  .infoTitle {
+    font-size: 1.6rem;
+  }
+}

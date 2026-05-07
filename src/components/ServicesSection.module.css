@@ -373,26 +373,75 @@
   .title {
     font-size: 2.2rem;
   }
+  .minimalGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
   .serviceCard {
-    height: 190px;
+    height: auto;
+    aspect-ratio: 1 / 1;
     gap: 12px;
-    padding: 20px;
+    padding: 16px;
     border-radius: 4px;
+  }
+  .highlightedCard {
+    grid-column: span 2;
+    aspect-ratio: auto;
+    height: 200px;
+    padding: 24px;
   }
   .iconContainer {
-    width: 56px;
-    height: 56px;
+    width: 48px;
+    height: 48px;
     border-radius: 4px;
   }
+  .iconContainer svg {
+    width: 24px;
+    height: 24px;
+  }
   .serviceName {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.3;
   }
   .cardArrow {
-    bottom: 16px;
-    right: 16px;
+    bottom: 12px;
+    right: 12px;
   }
   .whiteArrow {
-    bottom: 24px !important;
-    right: 24px !important;
+    bottom: 20px !important;
+    right: 20px !important;
+  }
+  .section {
+    padding: 30px 16px 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+  .heroText {
+    font-size: 2.4rem;
+  }
+  .section {
+    padding: 20px 16px 40px;
+  }
+}
+
+@media (max-width: 375px) {
+  .title {
+    font-size: 1.8rem;
+  }
+  .heroText {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .title {
+    font-size: 1.6rem;
+  }
+  .heroText {
+    font-size: 1.8rem;
   }
 }

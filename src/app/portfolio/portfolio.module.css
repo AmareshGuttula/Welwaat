@@ -24,36 +24,133 @@
 }
 
 .hero {
-  padding: 180px 2rem 100px;
+  padding: 120px 2rem 60px;
   text-align: center;
   position: relative;
+  overflow: hidden;
 }
 
 .heroContent {
   max-width: 900px;
   margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.badgeWrapper {
+  margin-bottom: 24px;
+}
+
+.heroBadge {
+  background: rgba(244, 82, 42, 0.08);
+  color: #f4522a;
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 1px solid rgba(244, 82, 42, 0.15);
 }
 
 .title {
   font-family: var(--font-playfair), serif;
-  font-size: 4.5rem;
+  font-size: 5rem;
   font-weight: 500;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   line-height: 1.05;
-  letter-spacing: -1.5px;
+  letter-spacing: -2px;
   color: #000;
 }
 
 .accent {
   color: #f4522a;
+  font-style: italic;
 }
 
 .description {
   font-size: 1.25rem;
   color: #666;
-  max-width: 650px;
-  margin: 0 auto;
+  max-width: 680px;
+  margin: 0 auto 48px;
   line-height: 1.6;
+}
+
+.textHighlight {
+  color: #111;
+  font-weight: 600;
+  position: relative;
+}
+
+.heroDivider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.dividerLine {
+  height: 1px;
+  width: 100px;
+  background: linear-gradient(90deg, transparent, rgba(244, 82, 42, 0.2), transparent);
+}
+
+.dividerNode {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(244, 82, 42, 0.2);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f4522a;
+  background: #fff;
+}
+
+.dividerNode svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Floating Visuals */
+.floatingNodes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floatNode {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background: #fff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(244, 82, 42, 0.4);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(244, 82, 42, 0.1);
+  animation: float 6s ease-in-out infinite;
+}
+
+.node1 { top: 20%; left: 15%; animation-delay: 0s; }
+.node2 { top: 60%; left: 80%; animation-delay: 2s; }
+.node3 { top: 30%; left: 85%; animation-delay: 4s; }
+
+.floatNode svg {
+  width: 24px;
+  height: 24px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
 }
 
 /* ── Sectors Section ── */
@@ -63,14 +160,14 @@
 }
 
 .sectorsContainer {
-  max-width: 1100px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
 .sectorsGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
 /* ── Sector Card ── */
@@ -175,11 +272,17 @@
 }
 
 .sectorCount {
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: 700;
   color: #f4522a;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.sectorCard:hover .sectorCount {
+  color: #111;
+  transform: translateX(2px);
 }
 
 .sectorArrow {
@@ -200,7 +303,7 @@
   transform: translateX(4px);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .sectorsGrid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -208,15 +311,52 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: 120px 1.5rem 40px;
+    padding: 100px 1.5rem 40px;
   }
   .title {
-    font-size: 3rem;
+    font-size: 3.5rem;
+    letter-spacing: -1px;
+  }
+  .description {
+    font-size: 1.1rem;
+  }
+  .floatingNodes {
+    opacity: 0.5;
   }
   .sectorsGrid {
     grid-template-columns: 1fr;
   }
   .sectorsSection {
     padding: 40px 1.5rem 60px;
+  }
+  .dividerLine {
+    width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2.8rem;
+  }
+  .hero {
+    padding: 80px 1.5rem 40px;
+  }
+  .floatingNodes {
+    display: none;
+  }
+  .dividerLine {
+    width: 40px;
+  }
+}
+
+@media (max-width: 375px) {
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .title {
+    font-size: 2.2rem;
   }
 }

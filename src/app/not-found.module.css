@@ -379,3 +379,18 @@
     font-size: 0.75rem;
   }
 }
+
+@media (max-width: 375px) {
+  .actions {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 320px) {
+  .actions {
+    gap: 8px;
+  }
+  .gravityCanvas {
+    height: 180px;
+  }
+}

@@ -49,8 +49,7 @@ const categories = [
     tagline: "Defining the visual DNA of brands that stand the test of time.",
     services: [
       { name: "UI/UX Design", icon: <Frame size={22} />, desc: "User-centric interfaces that convert.", highlighted: true },
-      { name: "Graphic Design", icon: <Palette size={22} />, desc: "High-impact visual communication." },
-      { name: "Brand Identity Design", icon: <Layers size={22} />, desc: "Cohesive identity systems." },
+      { name: "Graphic & Brand Identity Design", icon: <Palette size={22} />, desc: "High-performance visual systems, bespoke brand DNA, and strategic design architecture.", highlighted: true },
       { name: "Logo Design", icon: <PenTool size={22} />, desc: "Timeless marks and symbols." },
       { name: "Personal Branding", icon: <Users size={22} />, desc: "Build your personal digital identity." },
       { name: "Packaging Design", icon: <Package size={22} />, desc: "Product-first packaging design." }

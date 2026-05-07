@@ -126,19 +126,36 @@
 @media (max-width: 768px) {
   .stepsRow {
     flex-direction: column;
-    align-items: center;
-    gap: 16px;
+    align-items: flex-start;
+    gap: 0;
+    padding-left: 10px;
   }
 
   .connector {
-    width: 2px;
-    height: 48px;
-    padding-top: 0;
+    display: none;
   }
 
-  .dottedLine {
+  .step {
+    position: relative;
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 20px;
+    row-gap: 6px;
+    text-align: left;
+    align-items: start;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+  
+  .step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 56px; /* slightly below the circle */
+    left: 23px; /* centered relative to 48px circle */
     width: 2px;
-    height: 100%;
+    height: calc(100% - 56px + 32px); /* height of step content minus circle + gap margin */
     background-image: repeating-linear-gradient(
       to bottom,
       #F4522A 0px,
@@ -146,10 +163,11 @@
       transparent 4px,
       transparent 10px
     );
+    z-index: 1;
   }
 
-  .step {
-    max-width: 100%;
+  .step:last-child {
+    margin-bottom: 0;
   }
 
   .title {
@@ -157,8 +175,49 @@
   }
 
   .circle {
-    width: 56px;
-    height: 56px;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    width: 48px;
+    height: 48px;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    margin-top: 0;
+    z-index: 2;
+  }
+
+  .stepTitle {
+    grid-column: 2;
+    grid-row: 1;
+    margin-bottom: 0;
+    margin-top: 4px;
     font-size: 1.2rem;
+  }
+
+  .stepDesc {
+    grid-column: 2;
+    grid-row: 2;
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+  .section {
+    padding: 40px 16px;
+  }
+}
+
+@media (max-width: 375px) {
+  .title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .title {
+    font-size: 1.6rem;
   }
 }

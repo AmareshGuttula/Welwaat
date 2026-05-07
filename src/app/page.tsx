@@ -6,6 +6,7 @@ import HowItWorks from "@/components/HowItWorks";
 import PortfolioSection from "@/components/PortfolioSection";
 import { TestimonialV2 } from "@/components/ui/testimonial-v2";
 import BookMeetingButton from "@/components/BookMeetingButton";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import ContactUs from "@/components/ContactUs";
 import Footer from "@/components/Footer";
 
@@ -19,6 +20,9 @@ export default function Home() {
 
       {/* Hero Section */}
       <main className={styles.hero}>
+        {/* Architectural Scanner Effect */}
+        <div className={styles.heroScanner}></div>
+        
         <div className={styles.rating}>
           <span className={styles.reviewText}>Trusted by 100+ businesses globally</span>
         </div>
@@ -34,7 +38,7 @@ export default function Home() {
 
         <div className={styles.heroActions}>
           <Link href="/portfolio" className={styles.exploreBtn}>Explore Work</Link>
-          <BookMeetingButton className={styles.getStartedBtn} />
+          <WhatsAppButton className={styles.getStartedBtn} />
         </div>
 
         <div className={styles.visuals}>

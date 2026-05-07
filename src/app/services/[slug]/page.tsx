@@ -10,6 +10,7 @@ import {
   ArrowRight, Check, ChevronRight,
   Zap, Target, Layers, Wrench
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 // Brand Icon Mapping
 const brandIcons: Record<string, React.ReactNode> = {
@@ -169,27 +170,68 @@ export default function ServiceDetailPage() {
       <main>
         {/* ── Hero ── */}
         <section className={styles.hero}>
+          {/* Creative floating elements */}
+          <div className={styles.floatingElements}>
+            <motion.div 
+              className={`${styles.floatShape} ${styles.shape1}`}
+              animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <motion.div 
+              className={`${styles.floatShape} ${styles.shape2}`}
+              animate={{ y: [0, 25, 0], rotate: [0, -10, 0] }}
+              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <motion.div 
+              className={`${styles.floatShape} ${styles.shape3}`}
+              animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.6, 0.3] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            />
+          </div>
+
           <div className={styles.heroContainer}>
-            <div className={styles.heroBreadcrumb}>
+            <motion.div 
+              className={styles.heroBreadcrumb}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
               <Link href="/services" className={styles.breadcrumbLink}>Services</Link>
               <ChevronRight size={14} />
               <span className={styles.breadcrumbCurrent}>{service.category}</span>
-            </div>
+            </motion.div>
 
-            <h1 className={styles.heroTitle}>
+            <motion.h1 
+              className={styles.heroTitle}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+            >
               {firstWords}{" "}
               <span className={styles.accent}>{lastWord}</span>
-            </h1>
+            </motion.h1>
 
-            <p className={styles.heroDesc}>{service.heroDescription}</p>
+            <motion.p 
+              className={styles.heroDesc}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            >
+              {service.heroDescription}
+            </motion.p>
 
-            <div className={styles.heroActions}>
+            <motion.div 
+              className={styles.heroActions}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+            >
               <Link href="/contact" className={styles.heroCta}>
                 Start This Project
                 <ArrowRight size={18} />
               </Link>
               <span className={styles.heroCategoryTag}>{service.category}</span>
-            </div>
+            </motion.div>
           </div>
         </section>
 
@@ -227,13 +269,20 @@ export default function ServiceDetailPage() {
 
             <div className={styles.goalsGrid}>
               {service.clientGoals.map((goal, i) => (
-                <div key={i} className={styles.goalCard}>
+                <motion.div 
+                  key={i} 
+                  className={styles.goalCard}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                >
                   <div className={styles.goalNumber}>0{i + 1}</div>
                   <div className={styles.goalContent}>
                     <Check size={20} className={styles.goalCheck} />
                     <span className={styles.goalText}>{goal}</span>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -251,17 +300,39 @@ export default function ServiceDetailPage() {
 
             <div className={styles.processTimeline}>
               {service.process.map((step, i) => (
-                <div key={i} className={styles.processStep}>
+                <motion.div 
+                  key={i} 
+                  className={styles.processStep}
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.6, delay: i * 0.15 }}
+                >
                   <div className={styles.processMarker}>
-                    <div className={styles.processDot} />
-                    {i < service.process.length - 1 && <div className={styles.processLine} />}
+                    <motion.div 
+                      className={styles.processDot}
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: i * 0.15 + 0.2 }}
+                    />
+                    {i < service.process.length - 1 && (
+                      <motion.div 
+                        className={styles.processLine}
+                        initial={{ scaleY: 0 }}
+                        whileInView={{ scaleY: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: i * 0.15 + 0.4 }}
+                        style={{ transformOrigin: "top" }}
+                      />
+                    )}
                   </div>
                   <div className={styles.processCard}>
                     <span className={styles.processStepLabel}>Phase {String(i + 1).padStart(2, "0")}</span>
                     <h3 className={styles.processTitle}>{step.title}</h3>
                     <p className={styles.processDesc}>{step.desc}</p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -288,12 +359,19 @@ export default function ServiceDetailPage() {
                         const brandIcon = brandIcons[iconKey] || brandIcons.default;
                         
                         return (
-                          <div key={i} className={styles.stackItem}>
+                          <motion.div 
+                            key={i} 
+                            className={styles.stackItem}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ duration: 0.4, delay: i * 0.05 }}
+                          >
                             <div className={styles.stackIcon}>
                               {brandIcon}
                             </div>
                             <span>{item.name}</span>
-                          </div>
+                          </motion.div>
                         );
                       })}
                     </div>
@@ -308,12 +386,19 @@ export default function ServiceDetailPage() {
                       const brandIcon = brandIcons[iconKey] || brandIcons.default;
                       
                       return (
-                        <div key={i} className={styles.stackItem}>
+                        <motion.div 
+                          key={i} 
+                          className={styles.stackItem}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true, margin: "-50px" }}
+                          transition={{ duration: 0.4, delay: i * 0.05 }}
+                        >
                           <div className={styles.stackIcon}>
                             {brandIcon}
                           </div>
                           <span>{tool.name}</span>
-                        </div>
+                        </motion.div>
                       );
                     })}
                   </div>

@@ -18,7 +18,7 @@ const sitemapData = [
     { name: "App Development", href: "/services/app-development" },
     { name: "SaaS Product Development", href: "/services/saas-product-development" },
     { name: "UI/UX Design", href: "/services/ui-ux-design" },
-    { name: "Brand Identity Design", href: "/services/brand-identity-design" },
+    { name: "Graphic & Brand Identity Design", href: "/services/brand-identity-design" },
     { name: "Social Media Management", href: "/services/social-media-management" },
     { name: "SEO & Google Presence", href: "/services/seo-google-presence" },
   ]},

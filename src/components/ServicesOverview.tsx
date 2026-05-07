@@ -45,8 +45,7 @@ const categories = [
     icon: <Palette size={18} />,
     services: [
       { name: "UI/UX Design", slug: "ui-ux-design" },
-      { name: "Graphic Design", slug: "brand-identity-design" },
-      { name: "Brand Identity Design", slug: "brand-identity-design" },
+      { name: "Graphic & Brand Identity Design", slug: "brand-identity-design" },
       { name: "Logo Design", slug: "brand-identity-design" },
       { name: "Personal Branding", slug: "brand-identity-design" },
       { name: "Packaging Design", slug: "brand-identity-design" }

@@ -436,29 +436,30 @@ export const allServices: Record<string, ServiceDetail> = {
   },
   "brand-identity-design": {
     slug: "brand-identity-design",
-    name: "Brand Identity Design",
+    name: "Graphic & Brand Identity Design",
     category: "Design & Branding",
-    heroDescription: "Crafting the visual DNA of your business.",
-    fullDescription: "Your brand is more than a logo. It's a system of colors, typography, and values that communicate who you are. We build cohesive identities that command respect.",
+    heroDescription: "High-performance visual systems engineered for global impact.",
+    fullDescription: "We craft strategic visual identities that go beyond aesthetics. Our design systems are architected for 99+ performance, 100% responsiveness, and SEO optimization, ensuring your brand commands attention across every digital touchpoint.",
     clientGoals: [
-      "Unique market positioning",
-      "Memorable visual presence",
-      "Scalable brand assets",
-      "Clear emotional connection"
+      "99+ Performance-optimized assets",
+      "100% Responsive design systems",
+      "SEO-ready visual architecture",
+      "Strategic market positioning",
+      "Scalable brand DNA"
     ],
-    features: ["Logo Systems", "Typography Design", "Color Psychology", "Style Guides", "Brand Voice"],
+    features: ["Bespoke Logo Systems", "Advanced Typography", "Performance Asset Export", "Responsive Style Guides", "SEO-Aligned Visuals"],
     process: [
-      { title: "Discovery", desc: "Defining your brand's core values and mission." },
-      { title: "Concepting", desc: "Exploring visual directions and metaphors." },
-      { title: "Refinement", desc: "Polishing the chosen direction into a system." },
-      { title: "Guidelines", desc: "Creating the rules for your brand's growth." }
+      { title: "Strategic Discovery", desc: "Analyzing brand DNA, performance requirements, and SEO goals." },
+      { title: "Architectural Concepting", desc: "Exploring visual directions that scale seamlessly across platforms." },
+      { title: "Precision Refinement", desc: "Optimizing every vector and pixel for speed and clarity." },
+      { title: "System Delivery", desc: "Deploying a high-performance toolkit ready for global growth." }
     ],
     tools: [
       { name: "Adobe Illustrator", icon: "ai" },
       { name: "Adobe Photoshop", icon: "ps" },
+      { name: "Figma Professional", icon: "figma" },
       { name: "Adobe After Effects", icon: "ae" },
-      { name: "Brandfolder", icon: "dam" },
-      { name: "WGSN", icon: "trend" }
+      { name: "Brandfolder", icon: "dam" }
     ]
   },
   "social-media-management": {
@@ -636,13 +637,14 @@ export const serviceNameToSlug: Record<string, string> = {
   "E-commerce Website": "e-commerce-website",
   "Website Redesign": "website-redesign",
   "Website Maintenance": "website-maintenance",
+  "App Development": "app-development",
   "App Development (iOS & Android)": "app-development",
   "SaaS Product Development": "saas-product-development",
   "Web App Development": "web-app-development",
   "API & Backend Development": "api-backend-development",
   "UI/UX Design": "ui-ux-design",
   "Graphic Design": "brand-identity-design",
-  "Brand Identity Design": "brand-identity-design",
+  "Graphic & Brand Identity Design": "brand-identity-design",
   "Logo Design": "brand-identity-design",
   "Personal Branding": "brand-identity-design",
   "Packaging Design": "brand-identity-design",

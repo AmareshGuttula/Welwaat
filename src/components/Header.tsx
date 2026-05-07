@@ -1,13 +1,16 @@
 "use client";
 
 import styles from "@/app/page.module.css";
-import BookMeetingButton from "@/components/BookMeetingButton";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Sun, Moon } from "lucide-react";
 
 export default function Header() {
   const [isDark, setIsDark] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isServicesExpanded, setIsServicesExpanded] = useState(false);
+  const [isPortfolioExpanded, setIsPortfolioExpanded] = useState(false);
 
   useEffect(() => {
     // Check local storage - default to light if nothing is found
@@ -95,8 +98,7 @@ export default function Header() {
                       Design & Branding
                     </div>
                     <Link href="/services/ui-ux-design" className={styles.menuLink}>UI/UX Design</Link>
-                    <Link href="/services/brand-identity-design" className={styles.menuLink}>Graphic Design</Link>
-                    <Link href="/services/brand-identity-design" className={styles.menuLink}>Brand Identity Design</Link>
+                    <Link href="/services/brand-identity-design" className={`${styles.menuLink} ${styles.featuredLink}`}>Graphic & Brand Identity Design</Link>
                     <Link href="/services/brand-identity-design" className={styles.menuLink}>Logo Design</Link>
                     <Link href="/services/brand-identity-design" className={styles.menuLink}>Personal Branding</Link>
                     <Link href="/services/brand-identity-design" className={styles.menuLink}>Packaging Design</Link>
@@ -210,6 +212,20 @@ export default function Header() {
           <Link href="/career">Career</Link>
           <Link href="/contact">Contact Us</Link>
         </div>
+
+        {/* Mobile Menu Toggle Button */}
+        <button 
+          className={styles.mobileMenuBtn}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle mobile menu"
+        >
+          <div className={`${styles.hamburger} ${isMobileMenuOpen ? styles.hamburgerOpen : ""}`}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+
         <div className={styles.navActions}>
           <div className={styles.headerControls}>
             <button 
@@ -226,9 +242,58 @@ export default function Header() {
               </div>
             </button>
           </div>
-          <BookMeetingButton className={styles.startBtn} />
+          <WhatsAppButton className={styles.startBtn} />
         </div>
       </nav>
+
+      {/* Mobile Navigation Overlay */}
+      <div className={`${styles.mobileNavOverlay} ${isMobileMenuOpen ? styles.mobileNavOverlayOpen : ""}`}>
+        <div className={styles.mobileNavContent}>
+          <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+          <Link href="/about" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
+          <div className={styles.mobileServicesSection}>
+            <button 
+              className={styles.mobileAccordionToggle} 
+              onClick={() => setIsServicesExpanded(!isServicesExpanded)}
+            >
+              Services
+              <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" className={`${styles.mobileAccordionIcon} ${isServicesExpanded ? styles.mobileAccordionIconOpen : ""}`}>
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div className={`${styles.mobileAccordionContent} ${isServicesExpanded ? styles.mobileAccordionContentOpen : ""}`}>
+              <Link href="/services" onClick={() => setIsMobileMenuOpen(false)}>All Services</Link>
+              <Link href="/services/website-design-development" onClick={() => setIsMobileMenuOpen(false)}>Web Design & Dev</Link>
+              <Link href="/services/app-development" onClick={() => setIsMobileMenuOpen(false)}>App Development</Link>
+              <Link href="/services/seo-google-presence" onClick={() => setIsMobileMenuOpen(false)}>SEO Optimization</Link>
+              <Link href="/services/brand-identity-design" onClick={() => setIsMobileMenuOpen(false)}>Graphic & Brand Identity</Link>
+            </div>
+          </div>
+          <div className={styles.mobileServicesSection}>
+            <button 
+              className={styles.mobileAccordionToggle} 
+              onClick={() => setIsPortfolioExpanded(!isPortfolioExpanded)}
+            >
+              Portfolio
+              <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" className={`${styles.mobileAccordionIcon} ${isPortfolioExpanded ? styles.mobileAccordionIconOpen : ""}`}>
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div className={`${styles.mobileAccordionContent} ${isPortfolioExpanded ? styles.mobileAccordionContentOpen : ""}`}>
+              <Link href="/portfolio" onClick={() => setIsMobileMenuOpen(false)}>All Work</Link>
+              <Link href="/portfolio/web-design" onClick={() => setIsMobileMenuOpen(false)}>Web Design</Link>
+              <Link href="/portfolio/app-development" onClick={() => setIsMobileMenuOpen(false)}>App Dev</Link>
+              <Link href="/portfolio/graphic-design" onClick={() => setIsMobileMenuOpen(false)}>Graphic Design</Link>
+              <Link href="/portfolio/social-media" onClick={() => setIsMobileMenuOpen(false)}>Social Media</Link>
+            </div>
+          </div>
+          <Link href="/career" onClick={() => setIsMobileMenuOpen(false)}>Career</Link>
+          <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
+          <div className={styles.mobileNavFooter}>
+            <WhatsAppButton className={styles.mobileStartBtn} />
+          </div>
+        </div>
+      </div>
     </header>
   );
 }

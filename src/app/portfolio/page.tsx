@@ -10,7 +10,6 @@ const sectors = [
     title: "Web Design & Development",
     description: "Custom websites, landing pages, and enterprise platforms built for performance.",
     href: "/portfolio/web-design",
-    count: 10,
     icon: (
       <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" />
@@ -23,7 +22,6 @@ const sectors = [
     title: "App Development",
     description: "High-performance mobile applications for iOS and Android platforms.",
     href: "/portfolio/app-development",
-    count: 6,
     icon: (
       <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
@@ -32,10 +30,9 @@ const sectors = [
     ),
   },
   {
-    title: "Brand Identity & Graphic Design",
-    description: "Logos, packaging, and visual identity systems that define brands.",
+    title: "Graphic & Brand Identity Design",
+    description: "High-performance visual systems and brand identities optimized for 99+ speed and SEO impact.",
     href: "/portfolio/graphic-design",
-    count: 6,
     icon: (
       <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="13.5" cy="6.5" r=".5" fill="currentColor" />
@@ -50,23 +47,9 @@ const sectors = [
     title: "Social Media Management",
     description: "Strategic campaigns and content that drive engagement and growth.",
     href: "/portfolio/social-media",
-    count: 3,
     icon: (
       <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-      </svg>
-    ),
-  },
-  {
-    title: "UI/UX Design",
-    description: "User-centered interfaces and experiences designed for conversion.",
-    href: "/portfolio/web-design",
-    count: 3,
-    icon: (
-      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-        <line x1="3" y1="9" x2="21" y2="9" />
-        <line x1="9" y1="21" x2="9" y2="9" />
       </svg>
     ),
   },
@@ -81,12 +64,37 @@ export default function PortfolioPage() {
         {/* Hero Section */}
         <section className={styles.hero}>
           <div className={styles.heroContent}>
+            <div className={styles.badgeWrapper}>
+              <span className={styles.heroBadge}>Excellence Portfolio</span>
+            </div>
             <h1 className={styles.title}>
-              Our <span className={styles.accent}>Portfolio</span>
+              Our <span className={styles.accent}>Portfolio.</span>
             </h1>
             <p className={styles.description}>
-              A showcase of our digital excellence, architectural precision, and brand-defining projects.
+              A curated showcase of our <span className={styles.textHighlight}>digital excellence</span>, architectural precision, and brand-defining systems engineered for global impact.
             </p>
+            <div className={styles.heroDivider}>
+              <div className={styles.dividerLine}></div>
+              <div className={styles.dividerNode}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 2v20M17 5l-10 14M22 12H2M19 17L5 7" />
+                </svg>
+              </div>
+              <div className={styles.dividerLine}></div>
+            </div>
+          </div>
+
+          {/* Floating Visual Elements */}
+          <div className={styles.floatingNodes}>
+            <div className={`${styles.floatNode} ${styles.node1}`}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div className={`${styles.floatNode} ${styles.node2}`}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
+            </div>
+            <div className={`${styles.floatNode} ${styles.node3}`}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
           </div>
         </section>
 
@@ -108,7 +116,7 @@ export default function PortfolioPage() {
                     <p className={styles.sectorDesc}>{sector.description}</p>
                   </div>
                   <div className={styles.sectorFooter}>
-                    <span className={styles.sectorCount}>{sector.count} Projects</span>
+                    <span className={styles.sectorCount}>View Showcase</span>
                     <span className={styles.sectorArrow}>
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12" />

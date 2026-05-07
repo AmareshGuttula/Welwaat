@@ -8,7 +8,7 @@ const categories = [
   "All",
   "Website Design",
   "App Development",
-  "Brand Identity",
+  "Graphic Design",
   "UI/UX Design",
   "Social Media Management",
 ];
@@ -138,107 +138,124 @@ const projects = [
     image: "",
   },
 
-  // ── Brand Identity ──
+  // ── Graphic Design ──
   {
-    title: "Dark Psychology DocumentaryThumbnail",
-    client: "YouTube Thumbnail",
-    category: "Brand Identity",
+    title: "Cinematic Visual Narrative for Documentary Series",
+    client: "Pulse Media Studios",
+    category: "Graphic Design",
+    subCategory: "Thumbnails",
     image: "/graphic design/1.jpeg",
   },
   {
-    title: "Temple Vlog with Parents Thumbnail",
-    client: "YouTube Thumbnail",
-    category: "Brand Identity",
+    title: "Cultural Brand Identity for Heritage Vlog",
+    client: "Global Explorers",
+    category: "Graphic Design",
+    subCategory: "Thumbnails",
     image: "/graphic design/2.jpeg",
   },
   {
-    title: "Men Lust Psychology Documentary Thumbnail",
-    client: "YouTube Thumbnail",
-    category: "Brand Identity",
+    title: "Strategic Visual Identity for Psychology Research",
+    client: "Mind Lab International",
+    category: "Graphic Design",
+    subCategory: "Thumbnails",
     image: "/graphic design/3.jpeg",
   },
   {
-    title: "Automotive Policy News Analysis Thumbnail",
-    client: "YouTube Thumbnail",
-    category: "Brand Identity",
+    title: "Performance-Driven Automotive News Graphics",
+    client: "AutoTrend Network",
+    category: "Graphic Design",
+    subCategory: "Thumbnails",
     image: "/graphic design/4.jpeg",
   },
   {
-    title: "Gaming Industry Investigative Thumbnail",
-    client: "YouTube Thumbnail",
-    category: "Brand Identity",
+    title: "Investigative Gaming Industry Visual Systems",
+    client: "Pixel Insight",
+    category: "Graphic Design",
+    subCategory: "Thumbnails",
     image: "/graphic design/5.jpeg",
   },
   {
-    title: "Fast Food Franchise Review Thumbnail",
-    client: "YouTube Thumbnail",
-    category: "Brand Identity",
+    title: "Visual Communication for Culinary Reviews",
+    client: "Epicurean Guide",
+    category: "Graphic Design",
+    subCategory: "Thumbnails",
     image: "/graphic design/6.jpeg",
   },
   {
-    title: "Tech Tips and Tricks Video Thumbnail",
-    client: "YouTube Thumbnail",
-    category: "Brand Identity",
+    title: "High-Performance Tech Strategy Graphics",
+    client: "TechStream Solutions",
+    category: "Graphic Design",
+    subCategory: "Thumbnails",
     image: "/graphic design/7.jpeg",
   },
   {
-    title: "Socio-Economic Crisis Documentary Thumbnail",
-    client: "YouTube Thumbnail",
-    category: "Brand Identity",
+    title: "Socio-Economic Visual Storytelling Architecture",
+    client: "Society Watch",
+    category: "Graphic Design",
+    subCategory: "Thumbnails",
     image: "/graphic design/8.jpeg",
   },
   {
-    title: "Educational Chemistry Lesson Thumbnail",
-    client: "YouTube Thumbnail",
-    category: "Brand Identity",
+    title: "Educational Chemistry Visual Identity System",
+    client: "EduStream Global",
+    category: "Graphic Design",
+    subCategory: "Logos",
     image: "/graphic design/9.jpeg",
   },
   {
-    title: "Travel Destination Celebration Thumbnail",
-    client: "YouTube Thumbnail",
-    category: "Brand Identity",
+    title: "Bespoke Travel Destination Visual Identity",
+    client: "Voyage Elite",
+    category: "Graphic Design",
+    subCategory: "Logos",
     image: "/graphic design/10.jpeg",
   },
   {
-    title: "Lifestyle Interior Tour Promotional Thumbnail",
-    client: "YouTube Thumbnail",
-    category: "Brand Identity",
+    title: "Premium Interior Design Visual Narrative",
+    client: "Living Spaces Co",
+    category: "Graphic Design",
+    subCategory: "UI/UX",
     image: "/graphic design/11.jpeg",
   },
   {
-    title: "Psychological Analysis Documentary Thumbnail",
-    client: "YouTube Thumbnail",
-    category: "Brand Identity",
+    title: "Advanced Psychological Profile Visual Systems",
+    client: "Human Insight Lab",
+    category: "Graphic Design",
+    subCategory: "UI/UX",
     image: "/graphic design/12.jpeg",
   },
   {
-    title: "International Education Guide Thumbnail",
-    client: "YouTube Thumbnail",
-    category: "Brand Identity",
+    title: "Global Education Strategic Brand Identity",
+    client: "Academy One",
+    category: "Graphic Design",
+    subCategory: "Logos",
     image: "/graphic design/13.jpeg",
   },
   {
-    title: "Geopolitical Commentary Editorial Thumbnail",
-    client: "YouTube Thumbnail",
-    category: "Brand Identity",
+    title: "Geopolitical Commentary Visual Architecture",
+    client: "Policy Pulse",
+    category: "Graphic Design",
+    subCategory: "Thumbnails",
     image: "/graphic design/14.jpeg",
   },
   {
-    title: "Real Estate Legal Advisory Thumbnail",
-    client: "YouTube Thumbnail",
-    category: "Brand Identity",
+    title: "High-End Real Estate Visual Communication",
+    client: "Prime Realty Group",
+    category: "Graphic Design",
+    subCategory: "Logos",
     image: "/graphic design/15.jpeg",
   },
   {
-    title: "Cultural Event Celebration Thumbnail",
-    client: "YouTube Thumbnail",
-    category: "Brand Identity",
+    title: "Responsive Cultural Celebration Graphics",
+    client: "Unity Festivals",
+    category: "Graphic Design",
+    subCategory: "Thumbnails",
     image: "/graphic design/16.jpg",
   },
   {
-    title: "Podcast Year-In-Review Thumbnail",
-    client: "YouTube Thumbnail",
-    category: "Brand Identity",
+    title: "SEO-Optimized Podcast Brand Identity",
+    client: "Voice Network",
+    category: "Graphic Design",
+    subCategory: "Logos",
     image: "/graphic design/17.jpg",
   },
 
@@ -299,6 +316,7 @@ interface PortfolioSectionProps {
   hideLoadMore?: boolean;
   limit?: number;
   viewAllPath?: string;
+  subFilters?: string[];
 }
 
 export default function PortfolioSection(props: PortfolioSectionProps) {
@@ -307,9 +325,11 @@ export default function PortfolioSection(props: PortfolioSectionProps) {
     hideHeader = false,
     hideLoadMore = false,
     limit,
-    viewAllPath
+    viewAllPath,
+    subFilters
   } = props;
   const [activeFilter, setActiveFilter] = useState(defaultCategory);
+  const [activeSubFilter, setActiveSubFilter] = useState("All");
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [previewImage, setPreviewImage] = useState<string | null>(null);
   const [isPreviewMinimized, setIsPreviewMinimized] = useState(false);
@@ -352,10 +372,11 @@ export default function PortfolioSection(props: PortfolioSectionProps) {
     setIsPreviewMinimized(!isPreviewMinimized);
   };
 
-  const filteredProjects =
-    activeFilter === "All"
-      ? projects
-      : projects.filter((p) => p.category === activeFilter);
+  const filteredProjects = projects.filter((p) => {
+    const categoryMatch = activeFilter === "All" || p.category === activeFilter;
+    const subCategoryMatch = activeSubFilter === "All" || p.subCategory === activeSubFilter;
+    return categoryMatch && subCategoryMatch;
+  });
 
   const displayLimit = limit ? Number(limit) : filteredProjects.length;
   const displayedProjects = filteredProjects.slice(0, displayLimit);
@@ -382,13 +403,30 @@ export default function PortfolioSection(props: PortfolioSectionProps) {
                   key={cat}
                   className={`${styles.filterBtn} ${activeFilter === cat ? styles.filterActive : ""
                     }`}
-                  onClick={() => setActiveFilter(cat)}
+                  onClick={() => {
+                    setActiveFilter(cat);
+                    setActiveSubFilter("All");
+                  }}
                 >
                   {cat}
                 </button>
               ))}
             </div>
           </>
+        )}
+
+        {subFilters && subFilters.length > 0 && (
+          <div className={styles.subFilters}>
+            {["All", ...subFilters].map((sub) => (
+              <button
+                key={sub}
+                className={`${styles.subFilterBtn} ${activeSubFilter === sub ? styles.subFilterActive : ""}`}
+                onClick={() => setActiveSubFilter(sub)}
+              >
+                {sub}
+              </button>
+            ))}
+          </div>
         )}
 
         {/* Project Grid */}

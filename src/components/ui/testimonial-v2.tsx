@@ -14,58 +14,58 @@ interface Testimonial {
 // --- Data ---
 const testimonials: Testimonial[] = [
   {
-    text: "This ERP revolutionized our operations, streamlining finance and inventory. The cloud-based platform keeps us productive, even remotely.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150",
-    name: "Briana Patton",
-    role: "Operations Manager",
+    text: "Welwaat helped us dominate the local market with a high-performance site that handles millions of visitors during our peak sales.",
+    image: "/testimonials/21.jpg",
+    name: "Arjun Mehta",
+    role: "",
   },
   {
-    text: "Implementing this ERP was smooth and quick. The customizable, user-friendly interface made team training effortless.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150&h=150",
-    name: "Bilal Ahmed",
-    role: "IT Manager",
+    text: "The engineering quality is top-notch. Our custom dashboard is a game-changer for our fintech startup's internal operations.",
+    image: "/testimonials/22.jpg",
+    name: "Deepak Sharma",
+    role: "",
   },
   {
-    text: "The support team is exceptional, guiding us through setup and providing ongoing assistance, ensuring our satisfaction.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150&h=150",
-    name: "Saman Malik",
-    role: "Customer Support Lead",
+    text: "Stunning visual system that works across all our European markets. Clean, minimal, and premium design at its best.",
+    image: "/testimonials/23.jpg",
+    name: "Luca Rossi",
+    role: "",
   },
   {
-    text: "This ERP's seamless integration enhanced our business operations and efficiency. Highly recommend for its intuitive interface.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150",
-    name: "Omar Raza",
-    role: "CEO",
+    text: "They built a sub-second loading experience for our platform, making it accessible even on slower networks across India.",
+    image: "/testimonials/26.jpg",
+    name: "Rohan Gupta",
+    role: "",
   },
   {
-    text: "Its robust features and quick support have transformed our workflow, making us significantly more efficient.",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150&h=150",
-    name: "Zainab Hussain",
-    role: "Project Manager",
+    text: "Most professional branding team I've worked with. They delivered a world-class visual language for our US-wide product launch.",
+    image: "/testimonials/download (10).jpeg",
+    name: "Robert Sullivan",
+    role: "",
   },
   {
-    text: "The smooth implementation exceeded expectations. It streamlined processes, improving overall business performance.",
-    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=150&h=150",
-    name: "Aliza Khan",
-    role: "Business Analyst",
+    text: "We've seen a massive boost in organic traffic from the US and UK. Their technical SEO foundation is built for global scale.",
+    image: "/testimonials/download (18).jpeg",
+    name: "James Wilson",
+    role: "",
   },
   {
-    text: "Our business functions improved with a user-friendly design and positive customer feedback.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150&h=150",
-    name: "Farhan Siddiqui",
-    role: "Marketing Director",
+    text: "Innovative and reliable. They delivered a complex bespoke application that our customers in London absolutely love.",
+    image: "/testimonials/download (19).jpeg",
+    name: "Emily Watson",
+    role: "",
   },
   {
-    text: "They delivered a solution that exceeded expectations, understanding our needs and enhancing our operations.",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150&h=150",
-    name: "Sana Sheikh",
-    role: "Sales Manager",
+    text: "Sharp, recognizable identity. Welwaat is our go-to for all high-end digital design work for our New York based clients.",
+    image: "/testimonials/download (20).jpeg",
+    name: "Thomas Miller",
+    role: "",
   },
   {
-    text: "Using this ERP, our online presence and conversions significantly improved, boosting business performance.",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=150&h=150",
-    name: "Hassan Ali",
-    role: "E-commerce Manager",
+    text: "99+ PageSpeed score on our global app. The performance difference is night and day compared to our previous agency in California.",
+    image: "/testimonials/download (22).jpeg",
+    name: "Michael Smith",
+    role: "",
   },
 ];
 
@@ -114,7 +114,7 @@ const TestimonialsColumn = (props: {
                     y: -8,
                     transition: { type: "spring", stiffness: 400, damping: 17 }
                   }}
-                  className="p-4 w-[280px] h-[160px] border border-[#F4522A]/20 bg-white transition-all duration-300 cursor-default select-none group focus:outline-none focus:ring-2 focus:ring-primary/30 relative flex flex-col justify-between shadow-[0_4px_16px_rgba(0,0,0,0.02)]"
+                  className="p-3.5 w-[280px] h-[160px] border border-[#F4522A]/20 bg-white transition-all duration-300 cursor-default select-none group focus:outline-none focus:ring-2 focus:ring-primary/30 relative flex flex-col justify-between shadow-[0_4px_16px_rgba(0,0,0,0.02)]"
                   style={{
                     borderRadius: '4px',
                   }}
@@ -132,12 +132,14 @@ const TestimonialsColumn = (props: {
                         className="h-8 w-8 rounded-full object-cover ring-2 ring-neutral-100 dark:ring-neutral-800 group-hover:ring-primary/30 transition-all duration-300 ease-in-out"
                       />
                       <div className="flex flex-col">
-                        <cite className="font-semibold not-italic tracking-tight leading-4 text-neutral-900 dark:text-white transition-colors duration-300 text-xs">
+                        <span className="font-bold not-italic tracking-tight leading-tight text-black dark:text-white transition-colors duration-300 text-sm">
                           {name}
-                        </cite>
-                        <span className="text-[10px] leading-3 tracking-tight text-neutral-500 dark:text-neutral-500 mt-0.5 transition-colors duration-300">
-                          {role}
                         </span>
+                        {role && (
+                          <span className="text-[10px] leading-3 tracking-tight text-neutral-500 dark:text-neutral-500 mt-0.5 transition-colors duration-300">
+                            {role}
+                          </span>
+                        )}
                       </div>
                     </footer>
                   </blockquote>
@@ -197,7 +199,7 @@ export function TestimonialV2() {
             
             {/* Scrolling Area Wrapper */}
             <div 
-              className="max-h-[200px] overflow-hidden p-4 flex justify-center gap-6"
+              className="max-h-[320px] overflow-hidden p-4 flex justify-center gap-4"
               role="region"
               aria-label="Scrolling Testimonials"
             >

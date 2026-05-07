@@ -11,7 +11,7 @@ const services = [
   { icon: <Smartphone size={24} />, name: "App Development" },
   { icon: <Megaphone size={24} />, name: "Social Media Marketing & Management" },
   { icon: <Search size={24} />, name: "SEO & Google Presence" },
-  { icon: <Palette size={24} />, name: "Brand & UI Design" },
+  { icon: <Palette size={24} />, name: "Graphic Design" },
 ];
 
 export default function ServicesSection() {

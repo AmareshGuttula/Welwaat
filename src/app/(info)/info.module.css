@@ -470,3 +470,21 @@
   .grid3 { grid-template-columns: 1fr; }
   .grid4 { grid-template-columns: 1fr; }
 }
+
+@media (max-width: 480px) {
+  .title { font-size: 2.2rem; }
+  .sectionTitle { font-size: 1.8rem; }
+  .hero { padding: 100px 16px 40px; }
+  .section { padding: 40px 0; }
+  .card { padding: 24px 20px; }
+  .listItem { padding: 16px 20px; }
+}
+
+@media (max-width: 375px) {
+  .title { font-size: 2rem; }
+  .sectionTitle { font-size: 1.6rem; }
+}
+
+@media (max-width: 320px) {
+  .title { font-size: 1.8rem; }
+}
