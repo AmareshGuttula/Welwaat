@@ -7,10 +7,9 @@ import { X, Minus, ExternalLink, Maximize2 } from "lucide-react";
 const categories = [
   "All",
   "Website Design",
-  "App Development",
+  // "App Development",
   "Graphic Design",
-  "UI/UX Design",
-  "Social Media Management",
+  // "Social Media Management",
 ];
 
 const projects = [
@@ -101,7 +100,7 @@ const projects = [
   },
 
   // ── App Development ──
-  {
+  /* {
     title: "Fitness Tracker Mobile App",
     client: "FitLife Co",
     category: "App Development",
@@ -136,7 +135,7 @@ const projects = [
     client: "Eventify",
     category: "App Development",
     image: "",
-  },
+  }, */
 
   // ── Graphic Design ──
   {
@@ -259,28 +258,8 @@ const projects = [
     image: "/graphic design/17.jpg",
   },
 
-  // ── UI/UX Design ──
-  {
-    title: "Pure Canvas Organic Skincare Brand Identity",
-    client: "Madaga Inc",
-    category: "UI/UX Design",
-    image: "",
-  },
-  {
-    title: "Modern Minimalist Icon Set",
-    client: "UI Kit Lab",
-    category: "UI/UX Design",
-    image: "",
-  },
-  {
-    title: "Mobile App Dark Mode Redesign",
-    client: "NightOwl Apps",
-    category: "UI/UX Design",
-    image: "",
-  },
-
   // ── Social Media Management ──
-  {
+  /* {
     title: "Eco-Brand Social Growth Strategy",
     client: "GreenLife",
     category: "Social Media Management",
@@ -297,7 +276,7 @@ const projects = [
     client: "Vogue Styles",
     category: "Social Media Management",
     image: "",
-  },
+  }, */
 ];
 
 const loadingPhrases = [

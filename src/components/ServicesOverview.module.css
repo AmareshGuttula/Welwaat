@@ -25,7 +25,7 @@
   font-family: var(--font-playfair), serif;
   font-size: 2.8rem;
   font-weight: 700;
-  color: #111;
+  color: var(--text-main);
   letter-spacing: -1.5px;
   position: relative;
   display: inline-block;
@@ -54,7 +54,7 @@
 }
 
 .overviewCard {
-  background: white;
+  background: var(--card-bg);
   border: 1px solid rgba(0, 0, 0, 0.04);
   border-radius: 4px;
   padding: 24px;
@@ -86,7 +86,7 @@
   font-family: var(--font-inter), sans-serif;
   font-weight: 800;
   font-size: 0.85rem;
-  color: #111;
+  color: var(--text-main);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -106,7 +106,7 @@
   justify-content: space-between;
   padding: 8px 0;
   text-decoration: none;
-  color: #666;
+  color: var(--text-muted);
   font-size: 0.88rem;
   font-weight: 500;
   transition: all 0.2s ease;

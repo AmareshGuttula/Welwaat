@@ -114,13 +114,13 @@ const TestimonialsColumn = (props: {
                     y: -8,
                     transition: { type: "spring", stiffness: 400, damping: 17 }
                   }}
-                  className="p-3.5 w-[280px] h-[160px] border border-[#F4522A]/20 bg-white transition-all duration-300 cursor-default select-none group focus:outline-none focus:ring-2 focus:ring-primary/30 relative flex flex-col justify-between shadow-[0_4px_16px_rgba(0,0,0,0.02)]"
+                  className="p-3.5 w-[280px] h-[160px] border border-[#F4522A]/20 bg-[var(--card-bg)] transition-all duration-300 cursor-default select-none group focus:outline-none focus:ring-2 focus:ring-primary/30 relative flex flex-col justify-between shadow-[0_4px_16px_rgba(0,0,0,0.02)]"
                   style={{
                     borderRadius: '4px',
                   }}
                 >
                   <blockquote className="m-0 p-0 relative z-0 flex flex-col h-full">
-                    <p className="text-neutral-600 dark:text-neutral-400 leading-snug font-normal m-0 transition-colors duration-300 text-sm line-clamp-3">
+                    <p className="text-[var(--text-muted)] leading-snug font-normal m-0 transition-colors duration-300 text-sm line-clamp-3">
                       {text}
                     </p>
                     <footer className="flex items-center gap-3 mt-auto pt-2">
@@ -132,7 +132,7 @@ const TestimonialsColumn = (props: {
                         className="h-8 w-8 rounded-full object-cover ring-2 ring-neutral-100 dark:ring-neutral-800 group-hover:ring-primary/30 transition-all duration-300 ease-in-out"
                       />
                       <div className="flex flex-col">
-                        <span className="font-bold not-italic tracking-tight leading-tight text-black dark:text-white transition-colors duration-300 text-sm">
+                        <span className="font-bold not-italic tracking-tight leading-tight text-[var(--text-main)] transition-colors duration-300 text-sm">
                           {name}
                         </span>
                         {role && (
@@ -157,7 +157,7 @@ export function TestimonialV2() {
   return (
     <section 
       aria-labelledby="testimonials-heading"
-      className="bg-[#FAF9F7] py-20 relative overflow-hidden border-b border-[#F4522A]/20"
+      className="bg-[var(--bg-color)] py-20 relative overflow-hidden border-b border-[#F4522A]/20"
     >
       {/* Section Dot Pattern */}
       <div className="absolute inset-0 pointer-events-none z-0"
@@ -171,17 +171,17 @@ export function TestimonialV2() {
 
       <div className="container px-4 z-10 mx-auto relative">
         <div className="text-center mb-16">
-          <h2 className="font-['Playfair_Display',serif] text-[3rem] text-[#111] mb-2 tracking-tight">
+          <h2 className="font-['Playfair_Display',serif] text-[3rem] text-[var(--text-main)] mb-2 tracking-tight">
             Client <span className="text-[#F4522A]">Voices</span>
           </h2>
-          <p className="text-black/60 font-medium text-lg">
+          <p className="text-[var(--text-muted)] font-medium text-lg">
             What our partners say about working with us
           </p>
         </div>
 
         <div className="relative mt-10 max-w-5xl mx-auto">
           {/* Main Bordered Container */}
-          <div className="border border-[#F4522A]/25 rounded bg-white shadow-[0_4px_16px_rgba(0,0,0,0.02)] relative z-10">
+          <div className="border border-[#F4522A]/25 rounded bg-[var(--card-bg)] shadow-[0_4px_16px_rgba(0,0,0,0.02)] relative z-10">
             {/* Corner Handles */}
             <div className="absolute -top-[4px] -left-[4px] -right-[4px] -bottom-[4px] pointer-events-none z-20"
               style={{

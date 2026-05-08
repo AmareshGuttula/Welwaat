@@ -83,7 +83,7 @@ export default function Header() {
                       </span>
                       Development
                     </div>
-                    <Link href="/services/app-development" className={styles.menuLink}>App Development (iOS & Android)</Link>
+                    {/* <Link href="/services/app-development" className={styles.menuLink}>App Development (iOS & Android)</Link> */}
                     <Link href="/services/saas-product-development" className={styles.menuLink}>SaaS Product Development</Link>
                     <Link href="/services/web-app-development" className={styles.menuLink}>Web App Development</Link>
                     <Link href="/services/api-backend-development" className={styles.menuLink}>API & Backend Development</Link>
@@ -127,7 +127,7 @@ export default function Header() {
                       </span>
                       Marketing & Growth
                     </div>
-                    <Link href="/services/social-media-management" className={styles.menuLink}>Social Media Marketing & Management</Link>
+                    {/* <Link href="/services/social-media-management" className={styles.menuLink}>Social Media Marketing & Management</Link> */}
                     <Link href="/services/seo-google-presence" className={styles.menuLink}>SEO & Google Presence</Link>
                     <Link href="/services/seo-google-presence" className={styles.menuLink}>Email Marketing</Link>
                     <Link href="/services/seo-google-presence" className={styles.menuLink}>Paid Ads (Meta & Google)</Link>
@@ -138,7 +138,7 @@ export default function Header() {
               <div className={styles.megaMenuBottomStrip}>
                 <div className={styles.megaMenuBottomContainer}>
                   <div className={styles.megaMenuBottomLeft}>
-                    Not sure what you need? <a href="#" className={styles.freeConsultationLink}>Get a Free Consultation</a>
+                    Not sure what you need? <a href="https://wa.me/919110775913" target="_blank" rel="noopener noreferrer" className={styles.freeConsultationLink}>Book a Free Consultation</a>
                   </div>
                 </div>
               </div>
@@ -153,7 +153,7 @@ export default function Header() {
             
             <div className={styles.megaMenu}>
               <div className={styles.megaMenuContainer}>
-                <div className={`${styles.megaMenuGrid} ${styles.megaMenuGrid4}`}>
+                <div className={styles.megaMenuGrid}>
                   {/* Column 1 */}
                   <div className={styles.menuColumn}>
                     <Link href="/portfolio/web-design" className={styles.portfolioLargeLink}>
@@ -167,13 +167,13 @@ export default function Header() {
                   
                   {/* Column 2 */}
                   <div className={styles.menuColumn}>
-                    <Link href="/portfolio/app-development" className={styles.portfolioLargeLink}>
+                    <div className={`${styles.portfolioLargeLink} ${styles.disabledLink}`}>
                       <span className={styles.menuGroupIcon}>
                         <svg viewBox="0 0 24 24" width="14" height="14" stroke="#F4522A" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
                       </span>
-                      <span className={styles.portfolioLargeLinkTitle}>App Development</span>
+                      <span className={styles.portfolioLargeLinkTitle}>App Development <span className={styles.comingSoonBadge}>Coming Soon</span></span>
                       <span className={styles.portfolioLargeLinkDesc}>Discover our high-performance mobile applications.</span>
-                    </Link>
+                    </div>
                   </div>
 
                   {/* Column 3 */}
@@ -189,13 +189,24 @@ export default function Header() {
 
                   {/* Column 4 */}
                   <div className={styles.menuColumn}>
-                    <Link href="/portfolio/social-media" className={styles.portfolioLargeLink}>
+                    <div className={`${styles.portfolioLargeLink} ${styles.disabledLink}`}>
                       <span className={styles.menuGroupIcon}>
                         <svg viewBox="0 0 24 24" width="14" height="14" stroke="#F4522A" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                       </span>
-                      <span className={styles.portfolioLargeLinkTitle}>Social Media Management & Marketing</span>
+                      <span className={styles.portfolioLargeLinkTitle}>Social Media Management <span className={styles.comingSoonBadge}>Soon</span></span>
                       <span className={styles.portfolioLargeLinkDesc}>See how we drive engagement and growth.</span>
-                    </Link>
+                    </div>
+                  </div>
+
+                  {/* Column 5 */}
+                  <div className={styles.menuColumn}>
+                    <div className={`${styles.portfolioLargeLink} ${styles.disabledLink}`}>
+                      <span className={styles.menuGroupIcon}>
+                        <svg viewBox="0 0 24 24" width="14" height="14" stroke="#F4522A" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                      </span>
+                      <span className={styles.portfolioLargeLinkTitle}>Visual & Content <span className={styles.comingSoonBadge}>Soon</span></span>
+                      <span className={styles.portfolioLargeLinkDesc}>Photography, video editing, and content creation.</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -203,7 +214,7 @@ export default function Header() {
               <div className={styles.megaMenuBottomStrip}>
                 <div className={styles.megaMenuBottomContainer}>
                   <div className={styles.megaMenuBottomLeft}>
-                    Ready to start your project? <a href="#" className={styles.freeConsultationLink}>Get a Free Consultation</a>
+                    Ready to start your project? <a href="https://wa.me/919110775913" target="_blank" rel="noopener noreferrer" className={styles.freeConsultationLink}>Book a Free Consultation</a>
                   </div>
                 </div>
               </div>
@@ -264,7 +275,7 @@ export default function Header() {
             <div className={`${styles.mobileAccordionContent} ${isServicesExpanded ? styles.mobileAccordionContentOpen : ""}`}>
               <Link href="/services" onClick={() => setIsMobileMenuOpen(false)}>All Services</Link>
               <Link href="/services/website-design-development" onClick={() => setIsMobileMenuOpen(false)}>Web Design & Dev</Link>
-              <Link href="/services/app-development" onClick={() => setIsMobileMenuOpen(false)}>App Development</Link>
+              {/* <Link href="/services/app-development" onClick={() => setIsMobileMenuOpen(false)}>App Development</Link> */}
               <Link href="/services/seo-google-presence" onClick={() => setIsMobileMenuOpen(false)}>SEO Optimization</Link>
               <Link href="/services/brand-identity-design" onClick={() => setIsMobileMenuOpen(false)}>Graphic & Brand Identity</Link>
             </div>
@@ -282,9 +293,10 @@ export default function Header() {
             <div className={`${styles.mobileAccordionContent} ${isPortfolioExpanded ? styles.mobileAccordionContentOpen : ""}`}>
               <Link href="/portfolio" onClick={() => setIsMobileMenuOpen(false)}>All Work</Link>
               <Link href="/portfolio/web-design" onClick={() => setIsMobileMenuOpen(false)}>Web Design</Link>
-              <Link href="/portfolio/app-development" onClick={() => setIsMobileMenuOpen(false)}>App Dev</Link>
+              <div className={`${styles.mobileAccordionLink} ${styles.disabledLink}`}>App Dev <span className={styles.comingSoonBadge}>Soon</span></div>
               <Link href="/portfolio/graphic-design" onClick={() => setIsMobileMenuOpen(false)}>Graphic Design</Link>
-              <Link href="/portfolio/social-media" onClick={() => setIsMobileMenuOpen(false)}>Social Media</Link>
+              <div className={`${styles.mobileAccordionLink} ${styles.disabledLink}`}>Social Media <span className={styles.comingSoonBadge}>Soon</span></div>
+              <div className={`${styles.mobileAccordionLink} ${styles.disabledLink}`}>Visual & Content <span className={styles.comingSoonBadge}>Soon</span></div>
             </div>
           </div>
           <Link href="/career" onClick={() => setIsMobileMenuOpen(false)}>Career</Link>

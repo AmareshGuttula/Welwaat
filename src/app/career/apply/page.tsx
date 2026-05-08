@@ -5,45 +5,15 @@ import Footer from "@/components/Footer";
 import styles from "../career.module.css";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Upload, CheckCircle, ArrowLeft, Send } from "lucide-react";
+import { Upload, ArrowLeft, Send } from "lucide-react";
 import Link from "next/link";
+import { useForm, ValidationError } from "@formspree/react";
 
 export default function ApplyPage() {
-  const [formState, setFormState] = useState<"idle" | "submitting" | "success">("idle");
+  const [state, handleSubmit] = useForm("xykonpzv");
   const [file, setFile] = useState<File | null>(null);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormState("submitting");
-
-    const target = e.target as HTMLFormElement;
-    const formData = new FormData();
-    formData.append("name", (target.elements.namedItem("name") as HTMLInputElement).value);
-    formData.append("email", (target.elements.namedItem("email") as HTMLInputElement).value);
-    formData.append("message", (target.elements.namedItem("message") as HTMLTextAreaElement).value);
-    if (file) {
-      formData.append("file", file);
-    }
-
-    try {
-      const response = await fetch("/api/apply", {
-        method: "POST",
-        body: formData,
-      });
-
-      if (response.ok) {
-        setFormState("success");
-      } else {
-        throw new Error("Failed to submit");
-      }
-    } catch (error) {
-      console.error(error);
-      alert("Something went wrong. Please try again.");
-      setFormState("idle");
-    }
-  };
-
-  if (formState === "success") {
+  if (state.succeeded) {
     return (
       <div className={styles.careerPage}>
         <Header />
@@ -124,23 +94,27 @@ export default function ApplyPage() {
                   <label style={{ fontSize: '0.75rem', fontWeight: '700', textTransform: 'uppercase', color: 'var(--text-main)' }}>Full Name</label>
                   <input 
                     name="name"
+                    id="name"
                     type="text" 
                     required 
                     placeholder="Enter your name"
                     className={styles.searchInput} 
                     style={{ background: 'rgba(0,0,0,0.02)' }}
                   />
+                  <ValidationError prefix="Name" field="name" errors={state.errors} className="text-red-500 text-xs" />
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   <label style={{ fontSize: '0.75rem', fontWeight: '700', textTransform: 'uppercase', color: 'var(--text-main)' }}>Email Address</label>
                   <input 
                     name="email"
+                    id="email"
                     type="email" 
                     required 
                     placeholder="Enter your email"
                     className={styles.searchInput} 
                     style={{ background: 'rgba(0,0,0,0.02)' }}
                   />
+                  <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-500 text-xs" />
                 </div>
               </div>
 
@@ -148,12 +122,14 @@ export default function ApplyPage() {
                 <label style={{ fontSize: '0.75rem', fontWeight: '700', textTransform: 'uppercase', color: 'var(--text-main)' }}>What are you looking for?</label>
                 <textarea 
                   name="message"
+                  id="message"
                   required 
                   rows={5}
                   placeholder="Tell us about your ideal role, your skills, and what you'd like to build with us..."
                   className={styles.searchInput} 
                   style={{ background: 'rgba(0,0,0,0.02)', resize: 'vertical' }}
                 />
+                <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-500 text-xs" />
               </div>
 
               <div style={{ marginBottom: '32px' }}>
@@ -179,20 +155,22 @@ export default function ApplyPage() {
                   <p style={{ margin: '4px 0 0', fontSize: '0.7rem', opacity: 0.5 }}>PDF, DOCX up to 10MB</p>
                   <input 
                     id="file-upload" 
+                    name="upload"
                     type="file" 
                     hidden 
                     onChange={(e) => setFile(e.target.files?.[0] || null)}
                   />
+                  <ValidationError prefix="Upload" field="upload" errors={state.errors} className="text-red-500 text-xs mt-2" />
                 </div>
               </div>
 
               <button 
                 type="submit" 
-                disabled={formState === "submitting"}
+                disabled={state.submitting}
                 className={styles.ctaBtn} 
-                style={{ width: '100%', justifyContent: 'center', padding: '16px' }}
+                style={{ width: '100%', justifyContent: 'center', padding: '16px', opacity: state.submitting ? 0.7 : 1 }}
               >
-                {formState === "submitting" ? "Sending..." : "Submit Application"} 
+                {state.submitting ? "Sending..." : "Submit Application"} 
                 <Send size={16} style={{ marginLeft: '8px' }} />
               </button>
             </form>

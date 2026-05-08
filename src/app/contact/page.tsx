@@ -6,7 +6,7 @@ import ContactUs from "@/components/ContactUs";
 
 export default function ContactPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#FAF9F7]">
+    <div className="flex flex-col min-h-screen bg-[var(--bg-color)]">
       <Header />
       
       {/* 

@@ -11,12 +11,12 @@
 }
 
 .speechBubble {
-  background: white;
+  background: var(--card-bg);
   padding: 12px 16px;
   border-radius: 16px 16px 4px 16px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   font-size: 0.9rem;
-  color: #333;
+  color: var(--text-main);
   font-weight: 500;
   margin-bottom: 12px;
   opacity: 0;

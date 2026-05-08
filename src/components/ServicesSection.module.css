@@ -1,5 +1,5 @@
 .section {
-  background-color: #FAF9F7;
+  background-color: var(--bg-color);
   padding: 60px 24px;
   font-family: var(--font-inter), sans-serif;
   position: relative;
@@ -42,7 +42,7 @@
 .title {
   font-family: var(--font-playfair), serif;
   font-size: 3rem;
-  color: #111;
+  color: var(--text-main);
   margin-bottom: 8px;
   letter-spacing: -1px;
 }
@@ -52,7 +52,7 @@
 }
 
 .quote {
-  color: #000;
+  color: var(--text-main);
   opacity: 0.6;
   font-weight: 500;
   font-size: 1rem;
@@ -140,7 +140,7 @@
 }
 
 .serviceCard {
-  background-color: #ffffff;
+  background-color: var(--card-bg);
   background-image: radial-gradient(rgba(244, 82, 42, 0.08) 1px, transparent 1px);
   background-size: 20px 20px;
   width: 100%;
@@ -204,28 +204,28 @@
 .iconContainer {
   width: 72px;
   height: 72px;
-  background: #f8f8f8;
+  background: var(--bg-color);
   border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #111;
+  color: var(--text-main);
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .serviceCard:hover .iconContainer {
-  background: #111;
-  color: #fff;
+  background: var(--text-main);
+  color: var(--bg-color);
   transform: scale(1.05) rotate(-5deg);
-  border-color: #111;
+  border-color: var(--text-main);
 }
 
 .serviceName {
   font-family: var(--font-inter), sans-serif;
   font-weight: 700;
   font-size: 1.15rem;
-  color: #111;
+  color: var(--text-main);
   text-align: center;
   padding: 0 10px;
   transition: all 0.3s ease;

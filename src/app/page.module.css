@@ -8,7 +8,7 @@
 .headerWrapper {
   width: 100%;
   z-index: 999;
-  background: white;
+  background: var(--card-bg);
   border-bottom: 1px solid rgba(244, 82, 42, 0.15);
   position: relative;
 }
@@ -226,7 +226,7 @@
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #999;
+  color: var(--text-muted);
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -243,13 +243,13 @@
   width: 24px;
   height: 24px;
   border-radius: 6px;
-  background: #FFF5F3;
+  background: var(--bg-color);
   flex-shrink: 0;
 }
 
 .menuLink {
   font-size: 13.5px;
-  color: #444;
+  color: var(--text-muted);
   padding: 7px 10px;
   border-radius: 6px;
   text-decoration: none;
@@ -260,7 +260,7 @@
 
 .menuLink:hover {
   color: #F4522A !important;
-  background-color: #FFF5F3 !important;
+  background-color: var(--bg-color) !important;
   opacity: 1 !important;
   padding-left: 14px;
 }
@@ -271,9 +271,9 @@
 
 .featuredLink {
   border-left: 3px solid #F4522A;
-  background-color: #FFF5F3;
+  background-color: var(--bg-color);
   font-weight: 600;
-  color: #222;
+  color: var(--text-main);
 }
 
 .portfolioLargeLink {
@@ -289,7 +289,7 @@
 }
 
 .portfolioLargeLink:hover {
-  background: #FFF5F3;
+  background: var(--bg-color);
   border-color: rgba(244, 82, 42, 0.1);
   transform: translateY(-2px);
 }
@@ -297,17 +297,17 @@
 .portfolioLargeLinkTitle {
   font-size: 15px;
   font-weight: 600;
-  color: #222;
+  color: var(--text-main);
 }
 
 .portfolioLargeLinkDesc {
   font-size: 13px;
-  color: #777;
+  color: var(--text-muted);
   line-height: 1.5;
 }
 
 .megaMenuBottomStrip {
-  background: #FEF3F0;
+  background: var(--bg-color);
   width: 100%;
   border-radius: 0 0 16px 16px;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
@@ -324,11 +324,11 @@
 
 .megaMenuBottomLeft {
   font-size: 13.5px;
-  color: #888;
+  color: var(--text-muted);
 }
 
 .freeConsultationLink {
-  color: #333;
+  color: var(--text-main);
   font-weight: 600;
   text-decoration: none;
   margin-left: 4px;
@@ -432,7 +432,7 @@
 .switchKnob {
   width: 20px;
   height: 20px;
-  background: #ffffff;
+  background: var(--card-bg);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -538,7 +538,7 @@
   left: 0;
   width: 100%;
   height: 200px;
-  background: linear-gradient(to bottom, transparent, #FAF9F7);
+  background: linear-gradient(to bottom, transparent, var(--bg-color));
   z-index: 1;
   pointer-events: none;
 }
@@ -584,7 +584,7 @@
   line-height: 1.05;
   margin-bottom: 20px;
   letter-spacing: -1.5px;
-  color: #000;
+  color: var(--text-main);
 }
 
 .accent {
@@ -624,8 +624,8 @@
 }
 
 .getStartedBtn {
-  background: #ffffff;
-  color: #111;
+  background: var(--card-bg);
+  color: var(--text-main);
   border: 1px solid #e0e0e0;
   padding: 14px 28px;
   border-radius: 4px;
@@ -663,7 +663,7 @@
   position: absolute;
   width: 56px;
   height: 56px;
-  background: white;
+  background: var(--card-bg);
   border-radius: 4px;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
   display: flex;
@@ -963,11 +963,11 @@
   }
   
   .hero {
-    padding: 80px 24px 20px;
+    padding: 40px 24px 20px;
   }
   
   .hero::after {
-    height: 100px;
+    height: 80px;
   }
 
   .heroActions {
@@ -990,20 +990,20 @@
 
 @media (max-width: 480px) {
   .hero {
-    padding: 80px 16px 10px;
+    padding: 30px 16px 10px;
   }
 
   .hero::after {
-    height: 50px;
+    height: 40px;
   }
 
   .heading {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
     line-height: 1.05;
   }
   
   .nav {
-    padding: 16px 20px;
+    padding: 12px 16px;
   }
 }
 
@@ -1019,4 +1019,96 @@
     font-size: 2.1rem;
     line-height: 1.05;
   }
+}
+
+
+.comingSoonBadge {
+  font-size: 10px;
+  background: rgba(244, 82, 42, 0.1);
+  color: #F4522A;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-left: 8px;
+  vertical-align: middle;
+  border: 1px solid rgba(244, 82, 42, 0.2);
+  white-space: nowrap;
+}
+
+
+.disabledLink {
+  cursor: default !important;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.disabledLink:hover {
+  transform: none !important;
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+
+.mobileAccordionLink {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  font-family: var(--font-inter), sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.servicesDropdownContainer:hover .servicesTrigger {
+  color: var(--primary) !important;
+  opacity: 1 !important;
+}
+
+.servicesDropdownContainer:hover .dropdownIcon {
+  color: var(--primary) !important;
+  opacity: 1 !important;
+}
+
+
+/* Enhanced Header Hover States */
+.navLinks a:hover,
+.servicesTrigger:hover,
+.servicesDropdownContainer:hover > a,
+.simpleDropdownContainer:hover > a {
+  color: var(--primary) !important;
+  opacity: 1 !important;
+}
+
+.servicesTrigger:hover .dropdownIcon,
+.servicesDropdownContainer:hover .dropdownIcon {
+  color: var(--primary) !important;
+  opacity: 1 !important;
+}
+
+
+/* Enhanced Portfolio Dropdown Item Hover */
+.portfolioLargeLink:hover {
+  background: rgba(244, 82, 42, 0.05) !important;
+  border-color: rgba(244, 82, 42, 0.3) !important;
+  transform: translateY(-5px) !important;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05) !important;
+}
+
+.portfolioLargeLink:hover .portfolioLargeLinkTitle {
+  color: var(--primary) !important;
+}
+
+/* Allow hover on disabled links but keep them non-clickable */
+.disabledLink {
+  pointer-events: auto !important;
+  cursor: default !important;
+}
+
+.disabledLink:hover {
+  background: rgba(0, 0, 0, 0.02) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  transform: translateY(-2px) !important;
 }
